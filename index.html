@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Portfolio of Fritz, an Industrial Engineer focused on data analytics, business intelligence, operational systems, and process improvement.">
+
+  <meta name="theme-color" content="#f5f6f7">
+
+  <title>Fritz | Data Analytics &amp; Process Improvement</title>
+
+  <link rel="preload" as="image" href="images/pic03.jpg">
+
+  <style>
+
+    /* ================================================================
+
+       FRITZ PORTFOLIO — DESIGN SYSTEM
+
+       Safe visual adjustments live here. Content is in SITE_CONTENT below.
+
+       ================================================================ */
+
+    :root {
+
+      color-scheme: light;
+
+      --page: #f5f6f7;
+
+      --surface: #ffffff;
+
+      --surface-soft: #eef1f4;
+
+      --surface-blue: #edf2f7;
+
+      --ink: #1d2938;
+
+      --ink-soft: #435166;
+
+      --muted: #697789;
+
+      --accent: #486b8c;
+
+      --accent-hover: #287fc1;
+
+      --line: #e1e6eb;
+
+      --success: #477764;
+
+      --shadow-card: 0 8px 26px rgba(28, 43, 59, .055);
+
+      --shadow-hover: 0 14px 34px rgba(28, 43, 59, .10);
+
+      --radius-sm: 10px;
+
+      --radius: 16px;
+
+      --radius-lg: 22px;
+
+      --content-width: 1160px;
+
+      --nav-height: 72px;
+
+      --space-section: clamp(4.25rem, 8vw, 6.5rem);
+
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --ease: cubic-bezier(.22, .61, .36, 1);
+
+    }
+
+
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 18px); }
+
+    body {
+
+      margin: 0; background: var(--page); color: var(--ink); font-family: var(--font);
+
+      font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased;
+
+      text-rendering: optimizeLegibility;
+
+    }
+
+    body, button, a { -webkit-tap-highlight-color: transparent; }
+
+    img { display: block; max-width: 100%; }
+
+    a { color: var(--accent); text-decoration: none; }
+
+    a:hover { color: var(--accent-hover); }
+
+    button { font: inherit; }
+
+    button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
+
+      outline: 3px solid rgba(72, 107, 140, .48); outline-offset: 4px;
+
+    }
+
+    ::selection { background: #dce7f0; color: var(--ink); }
+
+    .container { width: min(calc(100% - 48px), var(--content-width)); margin-inline: auto; }
+
+    .skip-link:focus { position: fixed !important; z-index: 1000; top: 12px !important; left: 12px !important; width: auto !important; height: auto !important; padding: 10px 14px; overflow: visible !important; border-radius: 9px; background: #fff; color: var(--ink); box-shadow: var(--shadow-card); }
+
+    .eyebrow {
+
+      display: inline-flex; align-items: center; gap: 9px; margin: 0 0 16px;
+
+      color: var(--accent); font-size: .82rem; font-weight: 750; letter-spacing: .1em;
+
+      text-transform: uppercase;
+
+    }
+
+    .eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; }
+
+    h1, h2, h3, h4 { margin: 0; color: var(--ink); line-height: 1.2; letter-spacing: -.035em; }
+
+    h1 { max-width: 760px; font-size: clamp(2.6rem, 6vw, 4.65rem); font-weight: 720; }
+
+    h2 { font-size: clamp(2rem, 4vw, 2.65rem); font-weight: 700; }
+
+    h3 { font-size: clamp(1.25rem, 2.3vw, 1.55rem); font-weight: 680; }
+
+    h4 { font-size: 1.08rem; font-weight: 680; }
+
+    p { margin: 0; color: var(--ink-soft); }
+
+    .section { padding-block: var(--space-section); }
+
+    .section--soft { background: var(--surface-soft); }
+
+    .section-heading { max-width: 720px; margin-bottom: 38px; }
+
+    .section-heading h2 { margin-bottom: 13px; }
+
+    .section-heading > p { max-width: 680px; font-size: 1.08rem; }
+
+
+
+    /* Header and navigation */
+
+    .site-header {
+
+      position: sticky; z-index: 50; top: 0; background: rgba(255,255,255,.92);
+
+      border-bottom: 1px solid rgba(225,230,235,.9); backdrop-filter: blur(14px);
+
+    }
+
+    .nav-wrap { min-height: var(--nav-height); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+
+    .brand { color: var(--ink); font-size: 1rem; font-weight: 760; letter-spacing: -.025em; white-space: nowrap; }
+
+    .brand span { color: var(--accent); }
+
+    .site-nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 34px); }
+
+    .site-nav a { position: relative; color: var(--ink-soft); font-size: .96rem; font-weight: 620; transition: color .18s ease; }
+
+    .site-nav a::after { position: absolute; right: 0; bottom: -8px; left: 0; height: 2px; background: var(--accent); content: ""; transform: scaleX(0); transform-origin: left; transition: transform .2s var(--ease); }
+
+    .site-nav a:hover, .site-nav a[aria-current="location"] { color: var(--accent-hover); }
+
+    .site-nav a:hover::after, .site-nav a[aria-current="location"]::after { transform: scaleX(1); }
+
+    .nav-social { display: flex; align-items: center; gap: 10px; }
+
+    .nav-social a { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--ink-soft); transition: background .18s ease, border-color .18s ease, transform .18s ease; }
+
+    .nav-social a:hover { background: var(--surface-blue); border-color: var(--accent-hover); color: var(--accent-hover); transform: translateY(-2px); }
+
+    .nav-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .menu-toggle { display: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 11px; padding: 9px 12px; cursor: pointer; }
+
+
+
+    /* Hero */
+
+    .hero { position: relative; overflow: hidden; padding: clamp(76px, 11vw, 132px) 0 clamp(76px, 10vw, 118px); background: var(--page); }
+
+    .hero::after { position: absolute; top: -220px; right: -180px; width: 580px; height: 580px; border-radius: 50%; background: radial-gradient(circle, rgba(214,225,235,.55), rgba(245,246,247,0) 68%); content: ""; pointer-events: none; }
+
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr); align-items: center; gap: clamp(32px, 6vw, 76px); }
+
+    .hero-copy { min-width: 0; }
+
+    .hero-title { max-width: 760px; font-size: clamp(2.15rem, 4.1vw, 3.35rem); }
+
+    .hero-greeting {
+      display: block;
+      font-weight: 700 
+      !important; 
+      color: var(--accent);
+      font-size: .62em;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .typewriter-line {
+      display: block;
+      min-height: 1.2em;
+      max-width: 100%;
+      margin-top: .08em;
+      overflow: visible;
+      white-space: nowrap;
+    }
+
+    .typewriter {
+      display: inline-block;
+      max-width: 100%;
+      padding-right: .08em;
+      border-right: .075em solid var(--accent-hover);
+      font-size: 1em;
+      line-height: 1.2;
+      white-space: nowrap;
+      animation: caret-blink .85s steps(1, end) infinite;
+    }
+
+    .hero h1 .typewriter { color: var(--accent-hover); }
+
+    @keyframes caret-blink {
+      50% { border-color: transparent; }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .hero-photo { width: min(100%, 360px); margin: 0; justify-self: end; }
+
+    .hero-photo-frame {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      border: 1px solid #d8e0e7;
+      border-radius: 26px;
+      background: linear-gradient(145deg, #e7edf2, #f8fafb 58%, #dce6ee);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+
+    .hero-photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      padding: 24px;
+      color: var(--ink-soft);
+      text-align: center;
+    }
+
+    .hero-photo-placeholder[hidden] { display: none; }
+
+    .profile-initials {
+      display: grid;
+      width: 112px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid #cbd8e3;
+      border-radius: 50%;
+      background: rgba(255,255,255,.72);
+      color: var(--accent);
+      font-size: 2.6rem;
+      font-weight: 750;
+      letter-spacing: -.06em;
+    }
+
+    .hero-photo-placeholder strong { font-size: 1.1rem; }
+
+    .hero-photo-placeholder span:last-child { max-width: 250px; font-size: .9rem; line-height: 1.5; }
+
+    .hero-photo-placeholder code { font-size: .86em; }
+
+    .hero-photo figcaption { margin-top: 13px; color: var(--muted); font-size: .9rem; font-weight: 620; text-align: center; }
+
+
+    .hero-lead { max-width: 690px; margin-top: 24px; font-size: clamp(1.08rem, 2vw, 1.24rem); line-height: 1.72; }
+
+    .hero-tools { margin-top: 18px; color: var(--muted); font-size: 1rem; font-weight: 580; letter-spacing: .015em; }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+    .button {
+
+      display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 10px;
+
+      padding: 0 22px; border: 1px solid #cbd6e0; border-radius: 12px; background: var(--surface);
+
+      color: var(--accent-hover); font-size: 1rem; font-weight: 680; cursor: pointer;
+
+      transition: transform .2s var(--ease), box-shadow .2s ease, background .2s ease, border-color .2s ease;
+
+    }
+
+    .button:hover { transform: translateY(-2px); border-color: #b9c9d8; background: #f8fafc; box-shadow: 0 7px 18px rgba(34,54,74,.08); color: var(--accent-hover); }
+
+    .button--primary { border-color: var(--accent); background: var(--accent); color: #fff; }
+
+    .button--primary:hover { border-color: var(--accent-hover); background: var(--accent-hover); color: #fff; }
+
+    .button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    .hero-note { max-width: 650px; margin-top: 28px; padding: 21px; border: 1px solid rgba(215,223,231,.95); border-radius: var(--radius-lg); background: rgba(255,255,255,.76); box-shadow: var(--shadow-card); }
+
+    .hero-note-label { margin-bottom: 14px; color: var(--muted); font-size: .82rem; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
+
+    .hero-note strong { display: block; margin-bottom: 8px; font-size: 1.1rem; letter-spacing: -.02em; }
+
+    .hero-note p { font-size: 1rem; }
+
+    .hero-note-divider { height: 1px; margin: 18px 0; background: var(--line); }
+
+    .hero-note-foot { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .mini-tag { padding: 5px 9px; border: 1px solid var(--line); border-radius: 8px; background: #f7f9fb; color: var(--ink-soft); font-size: .82rem; font-weight: 620; }
+
+
+
+    /* Projects */
+
+    .project-jumps { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
+
+    .project-jumps a { padding: 8px 13px; border: 1px solid #dbe2e8; border-radius: 999px; background: rgba(255,255,255,.72); color: var(--ink-soft); font-size: .9rem; font-weight: 620; transition: background .18s ease, border-color .18s ease, color .18s ease; }
+
+    .project-jumps a:hover { border-color: #bdcbd8; background: var(--surface); color: var(--accent-hover); }
+
+    .project-category { margin-top: 58px; scroll-margin-top: calc(var(--nav-height) + 20px); }
+
+    .project-category:first-of-type { margin-top: 0; }
+
+    .category-head { display: flex; align-items: end; justify-content: space-between; gap: 22px; margin-bottom: 20px; }
+
+    .category-copy { max-width: 680px; }
+
+    .category-copy h3 { margin-bottom: 8px; }
+
+    .category-copy p { font-size: 1rem; }
+
+    .carousel-controls { display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
+
+    .carousel-controls[hidden] { display: none; }
+
+    .carousel-count { min-width: 66px; color: var(--muted); font-size: .9rem; text-align: right; font-variant-numeric: tabular-nums; }
+
+    .carousel-btn { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--accent-hover); cursor: pointer; transition: background .18s ease, transform .18s ease, border-color .18s ease; }
+
+    .carousel-btn:hover:not(:disabled) { transform: translateY(-1px); border-color: #bdcbd8; background: var(--surface-blue); }
+
+    .carousel-btn:disabled { opacity: .35; cursor: default; }
+
+    .carousel-btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .carousel-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 22px) / 2); gap: 22px; margin: 0; padding: 2px 2px 18px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #cbd5df transparent; }
+
+    .project-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-card); scroll-snap-align: start; transition: transform .24s var(--ease), box-shadow .24s ease, border-color .24s ease; }
+
+    .project-card:hover { transform: translateY(-4px); border-color: #d1dbe4; box-shadow: var(--shadow-hover); }
+
+    .project-image { position: relative; overflow: hidden; height: 205px; background: var(--surface-soft); }
+
+    .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s var(--ease); }
+
+    .project-card:hover .project-image img { transform: scale(1.025); }
+
+    .project-content { display: flex; flex: 1; flex-direction: column; padding: 23px 24px 24px; }
+
+    .project-content h4 { margin-bottom: 11px; font-size: 1.22rem; line-height: 1.35; }
+
+    .project-title { color: var(--ink); text-decoration: none; text-decoration-thickness: 1.5px; text-underline-offset: 4px; transition: color .2s ease; }
+
+    .project-title:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .project-content p { font-size: 1rem; line-height: 1.68; }
+
+    .project-metric { display: inline-flex; align-self: flex-start; align-items: baseline; gap: 8px; margin-top: 15px; padding: 8px 11px; border: 1px solid #dce7e1; border-radius: 10px; background: #f6faf7; color: var(--ink-soft); font-size: .88rem; }
+
+    .project-metric strong { color: var(--success); font-size: 1.08rem; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 19px 0 22px; padding: 0; list-style: none; }
+
+    .tags li { padding: 5px 9px; border: 1px solid #e5e9ed; border-radius: 8px; background: #f5f7f9; color: #526174; font-size: .84rem; font-weight: 610; line-height: 1.4; }
+
+
+
+
+
+.project-link {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  align-self: flex-start;
+
+  margin-top: auto;
+
+  padding: 14px 22px;
+
+  border: 1px solid var(--accent);
+
+  border-radius: 9px;
+
+  background: var(--accent);
+
+  color: #fff;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  transition:
+
+    background .2s ease,
+
+    border-color .2s ease,
+
+    transform .2s ease,
+
+    box-shadow .2s ease;
+
+}
+
+
+
+.project-link:hover {
+
+  background: var(--accent-hover);
+
+  border-color: var(--accent-hover);
+
+  color: #fff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 12px rgba(29, 41, 56, .13);
+
+}
+
+
+
+.project-link svg {
+
+  width: 17px;
+
+  height: 17px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  transition: transform .18s ease;
+
+}
+
+
+
+.project-link:hover svg {
+
+  transform: translate(2px, -2px);
+
+}
+
+
+
+.project-link:focus-visible,
+
+.project-title:focus-visible {
+
+  outline: 3px solid var(--accent);
+
+  outline-offset: 4px;
+
+}
+
+
+
+
+
+    .empty-state { padding: 28px; border: 1px dashed #cbd5df; border-radius: var(--radius); color: var(--muted); background: rgba(255,255,255,.6); }
+
+
+
+    /* About and skills */
+
+    .about-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: clamp(34px, 7vw, 84px); align-items: start; }
+
+    .about-copy p + p { margin-top: 16px; }
+
+    .about-callout { margin-top: 25px; padding: 19px 21px; border: 1px solid #dbe4ec; border-radius: var(--radius); background: var(--surface-blue); color: var(--ink); }
+
+    .about-callout p { color: var(--ink-soft); font-size: 1rem; }
+
+    .skill-list { display: grid; gap: 20px; }
+
+    .skill-group { padding-bottom: 19px; border-bottom: 1px solid var(--line); }
+
+    .skill-group:last-child { padding-bottom: 0; border-bottom: 0; }
+
+    .skill-group h4 { margin-bottom: 11px; font-size: 1rem; }
+
+    .skill-group .tags { margin: 0; }
+
+
+
+    /* Contact and footer */
+
+    .contact-panel { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: clamp(26px, 5vw, 44px); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-card); }
+
+    .contact-panel-copy { max-width: 650px; }
+
+    .contact-panel-copy h2 { margin-bottom: 12px; font-size: clamp(1.8rem, 4vw, 2.4rem); }
+
+    .contact-panel-copy p { font-size: 1.02rem; }
+
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; flex-shrink: 0; }
+
+    .site-footer { padding: 25px 0 34px; color: var(--muted); font-size: .88rem; }
+
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+
+    .footer-inner p { color: var(--muted); font-size: .88rem; }
+
+    .footer-credit a { text-decoration: underline; text-underline-offset: 3px; }
+
+    .back-top { color: var(--muted); font-weight: 650; }
+
+
+
+    /* Motion is deliberately restrained; native wheel and touch scrolling remain native. */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html { scroll-behavior: auto; }
+
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+
+    }
+
+    @media (max-width: 900px) {
+
+      .hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(220px, .85fr); gap: 30px; }
+
+      .hero-photo { width: min(100%, 320px); }
+
+      .about-grid { grid-template-columns: 1fr; }
+
+      .contact-panel { align-items: flex-start; flex-direction: column; }
+
+    }
+
+    @media (max-width: 700px) {
+
+      :root { --nav-height: 64px; --space-section: 4.3rem; }
+
+      .container { width: min(calc(100% - 36px), var(--content-width)); }
+
+      .nav-wrap { position: relative; gap: 12px; }
+
+      .menu-toggle { display: inline-flex; align-items: center; gap: 8px; }
+
+      .site-nav { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: none; align-items: stretch; flex-direction: column; gap: 0; padding: 9px 18px 16px; border: 1px solid var(--line); border-top: 0; border-radius: 0 0 14px 14px; background: var(--surface); box-shadow: 0 14px 24px rgba(28,43,59,.08); }
+
+      .site-nav.is-open { display: flex; }
+
+      .site-nav a { padding: 11px 0; }
+
+      .site-nav a::after { display: none; }
+
+      .nav-social { margin-left: auto; }
+
+      .hero { padding-block: 76px 70px; }
+
+      .hero-grid { grid-template-columns: 1fr; }
+
+      .hero-photo { width: min(100%, 320px); justify-self: center; }
+
+      .hero-note { padding: 20px; }
+
+      .hero-title { font-size: clamp(1.8rem, 7vw, 2.65rem); }
+
+      .hero-greeting { font-size: .62em; }
+
+      .typewriter { font-size: .82em; }
+
+      .category-head { align-items: flex-start; flex-direction: column; }
+
+      .carousel-controls { align-self: flex-end; }
+
+      .carousel-track { grid-auto-columns: minmax(0, 88%); gap: 15px; }
+
+      .project-image { height: 190px; }
+
+      .project-content { padding: 20px; }
+
+      .project-category { margin-top: 46px; }
+
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+
+    }
+
+    @media (max-width: 420px) {
+
+      .nav-social { display: none; }
+
+      .hero-actions .button { width: 100%; }
+
+      .carousel-track { grid-auto-columns: minmax(0, 94%); }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+
+  <header class="site-header">
+
+    <div class="container nav-wrap">
+
+      <a class="brand" href="#top" aria-label="Back to top">Fritz Ian Entoma<span>. Data Analytics</span></a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+
+        <span aria-hidden="true">☰</span><span>Menu</span>
+
+      </button>
+
+      <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
+
+        <a href="#projects">Projects</a>
+
+        <a href="#about">About</a>
+
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+      <div class="nav-social" aria-label="Social profiles">
+                <a data-social="email" href="mailto:fritzianentoma@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M2 4h20v16H2V4zm10 8L4 6v12h16V6l-8 6zm0-2 7-4H5l7 4z"/>
+          </svg>
+        </a>
+
+        <a data-social="linkedin" href="https://www.linkedin.com/in/fientoma/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.44c.98 0 1.79-.77 1.79-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+
+        </a>
+
+        <a data-social="github" href="https://github.com/entoma-fritzian" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.08c-3.1.68-3.75-1.32-3.75-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.71 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.1-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.16 1.78 1.16 3 0 4.29-2.62 5.23-5.11 5.51.4.35.76 1.03.76 2.08V22c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z"/></svg>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <main id="main-content">
+
+    <section class="hero" id="top">
+
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+
+          <p class="eyebrow" data-content="heroEyebrow">Industrial Engineering · Data Analytics</p>
+
+          <h1 class="hero-title"><span class="hero-greeting">Hi, I'm</span><span class="typewriter-line"><span class="typewriter" id="typewriter-text" aria-hidden="true">Fritz Ian</span></span><span class="sr-only">Fritz Ian; Industrial Engineer; Data Analyst</span></h1>
+
+          <p class="hero-lead" data-content="heroLead">I build practical data solutions, improve everyday workflows, and turn information into insights that teams can use.</p>
+
+          <p class="hero-tools" data-content="heroTools">Google Sheets · Excel · SQL · Power BI · Process Improvement</p>
+
+          <div class="hero-actions">
+
+            <a class="button button--primary" href="#projects" data-content="projectsButton">Explore my projects
+
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+
+            </a>
+
+            <a class="button" data-link="linkedin" href="https://www.linkedin.com/in/fientoma/" target="_blank" rel="noopener noreferrer" data-content="linkedinButton">Connect on LinkedIn</a>
+
+          </div>
+
+          <aside class="hero-note" aria-label="Professional focus">
+
+          <p class="hero-note-label" data-content="focusLabel">Professional focus</p>
+
+          <strong data-content="focusTitle">Reliable data. Useful systems. Better decisions.</strong>
+
+          <p data-content="focusDescription">A practical approach shaped by operational problem-solving, data integrity, and continuous improvement.</p>
+
+          <div class="hero-note-divider"></div>
+
+            <div class="hero-note-foot" id="focus-tags"></div>
+
+          </aside>
+
+        </div>
+
+        <figure class="hero-photo">
+          <div class="hero-photo-frame">
+            <img id="profile-photo" src="images/me.jpg" alt="Professional portrait of Fritz Ian" hidden>
+            <div class="hero-photo-placeholder" id="profile-photo-placeholder">
+              <span class="profile-initials" aria-hidden="true">FI</span>
+              <strong>Your photo goes here</strong>
+              <span>Save your portrait as <code>images/fritz-profile.jpg</code></span>
+            </div>
+          </div>
+          <figcaption>Industrial Engineer · Data Analytics</figcaption>
+        </figure>
+      </div>
+
+    </section>
+
+
+
+    <section class="section section--soft" id="projects">
+
+      <div class="container">
+
+        <header class="section-heading">
+
+          <p class="eyebrow" data-content="projectsEyebrow">Selected work</p>
+
+          <h2 data-content="projectsTitle">Projects</h2>
+
+          <p data-content="projectsIntro">A selection of practical work across data quality, workflow improvement, analysis, and business intelligence.</p>
+
+          <nav class="project-jumps" id="project-jumps" aria-label="Jump to a project category"></nav>
+
+        </header>
+
+        <div id="project-categories"></div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="section" id="about">
+
+      <div class="container about-grid">
+
+        <div class="about-copy">
+
+          <p class="eyebrow" data-content="aboutEyebrow">Background &amp; approach</p>
+
+          <h2 data-content="aboutTitle">About</h2>
+
+          <div id="about-paragraphs"></div>
+
+          <div class="about-callout"><p data-content="aboutCallout">I value clear thinking, dependable data, and solutions that make work easier to understand and manage.</p></div>
+
+        </div>
+
+        <div>
+
+          <p class="eyebrow" data-content="skillsEyebrow">Tools &amp; capabilities</p>
+
+          <div class="skill-list" id="skill-groups"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="section section--soft" id="contact">
+
+      <div class="container">
+
+        <div class="contact-panel">
+
+          <div class="contact-panel-copy">
+
+            <p class="eyebrow" data-content="contactEyebrow">Get in touch</p>
+
+            <h2 data-content="contactTitle">Let's connect.</h2>
+
+            <p data-content="contactDescription">I'm open to conversations about data analytics, business intelligence, and process improvement opportunities.</p>
+
+          </div>
+
+          <div class="contact-actions">
+
+            <a class="button button--primary" data-link="linkedin" href="https://www.linkedin.com/in/fientoma/" target="_blank" rel="noopener noreferrer" data-content="contactLinkedin">Message me on LinkedIn</a>
+
+            <a class="button" data-link="github" href="https://github.com/entoma-fritzian" target="_blank" rel="noopener noreferrer" data-content="contactGithub">View GitHub</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <footer class="site-footer">
+
+    <div class="container footer-inner">
+
+      <p data-content="copyright">© Fritz Ian Entoma · Data Analytics Portfolio</p>
+
+      <p class="footer-credit">Built with care · <a href="https://html5up.net" target="_blank" rel="noopener noreferrer">Original Massively template by HTML5 UP</a></p>
+
+      <a class="back-top" href="#top">Back to top ↑</a>
+
+    </div>
+
+  </footer>
+
+
+
+  <script>
+
+    /* =====================================================================
+
+       EDITABLE WEBSITE CONTENT
+
+       Change the words, links, tools, and project details in this section.
+
+       Keep the property names and punctuation (quotes, commas, brackets).
+
+       To add a project, copy one project object inside its category's array.
+
+       To hide a category, leave its projects array empty.
+
+       ===================================================================== */
+
+    const SITE_CONTENT = {
+
+      links: {
+
+        linkedin: "https://www.linkedin.com/in/fientoma/",
+
+        github: "https://github.com/entoma-fritzian"
+
+      },
+
+      heroEyebrow: "Industrial Engineering · Data Analytics",
+
+      heroTitle: "Hi, I'm <span>Fritz Ian</span>",
+
+      heroLead: "I build practical data solutions, improve everyday workflows, and turn information into insights that teams can use.",
+
+      heroTools: "Google Sheets · Excel · SQL · Power BI · Process Improvement",
+
+      projectsButton: "Explore my projects",
+
+      linkedinButton: "Connect on LinkedIn",
+
+      focusLabel: "Professional focus",
+
+      focusTitle: "Reliable data. Useful systems. Better decisions.",
+
+      focusDescription: "A practical approach shaped by operational problem-solving, data integrity, and continuous improvement.",
+
+      focusTags: ["Data quality", "Automation", "Business insight"],
+
+      projectsEyebrow: "Selected work",
+
+      projectsTitle: "Projects",
+
+      projectsIntro: "A selection of practical work across data quality, workflow improvement, analysis, and business intelligence.",
+
+      aboutEyebrow: "Background & approach",
+
+      aboutTitle: "About",
+
+      aboutParagraphs: [
+
+        "I'm an Industrial Engineer focused on using data and structured problem-solving to improve how work gets done.",
+
+        "My projects often begin with a practical challenge: a manual process, an unreliable dataset, or an unclear view of performance. I work toward solutions that are understandable, maintainable, and useful to the people relying on them."
+
+      ],
+
+      aboutCallout: "I value clear thinking, dependable data, and solutions that make work easier to understand and manage.",
+
+      skillsEyebrow: "Tools & capabilities",
+
+      skills: [
+
+        { title: "Spreadsheets & automation", items: ["Google Sheets", "Excel", "Google Apps Script", "Power Query", "XLOOKUP", "ARRAYFORMULA", "Data Validation"] },
+
+        { title: "SQL & data preparation", items: ["MySQL Workbench", "CTEs", "Staging Tables", "Deduplication", "Data Standardization", "NULL Handling"] },
+
+        { title: "Business intelligence", items: ["Power BI", "DAX", "KPI Monitoring", "Dashboard Development", "Operational Analysis"] }
+
+      ],
+
+      contactEyebrow: "Get in touch",
+
+      contactTitle: "Let's connect.",
+
+      contactDescription: "I'm open to conversations about data analytics, business intelligence, and process improvement opportunities.",
+
+      contactLinkedin: "Message me on LinkedIn",
+
+      contactGithub: "View GitHub",
+
+      copyright: "© Fritz · Data Analytics Portfolio",
+
+      categories: [
+
+        {
+
+          id: "data-cleaning", title: "Data Cleaning",
+
+          description: "Turning raw, messy datasets into reliable, analysis-ready tables through structured SQL workflows.",
+
+          projects: [
+
+            {
+
+              title: "Customer Orders Data Cleaning Pipeline",
+
+              description: "Cleaned a raw customer orders dataset through a staged SQL pipeline, turning 15 raw rows into 9 analysis-ready records.",
+
+              image: "images/sql01.jpg", imageAlt: "Project preview for the customer orders SQL data cleaning pipeline",
+
+              url: "https://github.com/entoma-fritzian/customer_orders_data_cleaning_pipeline",
+
+              tags: ["Data Cleaning", "Deduplication", "Date Standardization", "Price Formatting", "Staging Tables", "MySQL Workbench"]
+
+            },
+
+            {
+
+              title: "World Layoffs Data Cleaning Procedures",
+
+              description: "Transformed raw layoffs data into a structured, standardized, analysis-ready dataset through systematic SQL cleaning procedures.",
+
+              image: "images/sql02.jpg", imageAlt: "Project preview for the world layoffs SQL data cleaning project",
+
+              url: "https://github.com/entoma-fritzian/world_layoffs_data_cleaning_procedures",
+
+              tags: ["Data Cleaning", "Deduplication", "CTEs", "Staging Tables", "Data Standardization", "NULL Handling", "Date Conversion", "MySQL Workbench"]
+
+            },
+
+            {
+
+              title: "Salifort Motors HR Data Cleaning",
+
+              description: "Cleaned and standardized an employee dataset, reducing 14,999 records to 11,991 after deduplication and filtering extreme outliers using Z-scores.",
+
+              image: "images/sql03.jpg", imageAlt: "Project preview for the Salifort Motors HR data cleaning project",
+
+              url: "https://github.com/entoma-fritzian/hr_salifort_motors_data_cleaning",
+
+              tags: ["Data Cleaning", "Deduplication", "Z-Score Analysis", "Outlier Detection", "NULL Validation", "Staging Tables", "MySQL Workbench"]
+
+            }
+
+          ]
+
+        },
+
+        {
+
+          id: "system-improvement", title: "System Improvement",
+
+          description: "Replacing repetitive manual steps with more consistent, error-resistant workflows.",
+
+          projects: [
+
+            {
+
+              title: "Allocation Management System",
+
+              description: "An allocation management system covering demand forecasting, automated allocation, and replenishment planning.",
+
+              image: "images/allocate.jpg", imageAlt: "Project preview for the allocation management spreadsheet system",
+
+              url: "https://docs.google.com/spreadsheets/d/1dgVAIcGYaEM8l3Non8wrHbFILEq6kRPDlHEcR2bXfJI/edit?gid=121828241#gid=121828241",
+
+              metricValue: "2 hrs", metricLabel: "manual processing time saved",
+
+              tags: ["Google Sheets", "Power Query", "XLOOKUP", "ARRAYFORMULA", "Data Validation", "Exponential Smoothing", "Demand Forecasting", "Inventory Management", "Workflow Automation"]
+
+            },
+
+            {
+
+              title: "Sales Monitoring & Management System",
+
+              description: "Integrated automated sales entry, database recording, and role-based dashboards into one system, preventing data errors at the point of entry. Demonstrated with 2,334 records across 26 branches.",
+
+              image: "images/sales.jpg", imageAlt: "Project preview for the sales monitoring and management system",
+
+              url: "https://docs.google.com/spreadsheets/d/1YXDQqAa6EejmE7mohg6Zw7BTfKoF0j8UzgZWAIU7Q8A/edit?gid=866202411#gid=866202411",
+
+              tags: ["Google Sheets", "Google Apps Script", "Workflow Automation", "Data Validation", "Data Profiling", "Dashboard Development"]
+
+            }
+
+          ]
+
+        },
+
+        {
+
+          id: "data-analysis", title: "Data Analysis",
+
+          description: "Exploring data to answer a defined business question and identify a useful next step.",
+
+          projects: []
+
+        },
+
+        {
+
+          id: "dashboards", title: "Dashboards",
+
+          description: "Turning data into clear performance views that help people monitor activity and make informed decisions.",
+
+          projects: [
+
+            {
+
+              title: "ER Operational Performance Dashboard",
+
+              description: "Analyzed 9,216 patient encounters to evaluate emergency room demand, operational efficiency, waiting times, and patient experience.",
+
+              image: "images/er.jpg", imageAlt: "Preview of the emergency room operational performance dashboard",
+
+              url: "https://entoma-fritzian.github.io/powerbireport/",
+
+              tags: ["Power BI", "DAX", "Demand Analysis", "Operational Performance", "Waiting Time Analysis", "Patient Satisfaction", "KPI Monitoring"]
+
+            }
+
+          ]
+
+        }
+
+      ]
+
+    };
+
+
+
+    /* =====================================================================
+
+       SITE RENDERING + INTERACTIONS
+
+       Normally, you do not need to edit anything below this line.
+
+       ===================================================================== */
+
+    (function () {
+
+      "use strict";
+
+      const content = SITE_CONTENT;
+
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      // Show the supplied portrait when its image file is present; otherwise keep the helpful placeholder.
+      const profileImage = document.getElementById("profile-photo");
+      const profilePlaceholder = document.getElementById("profile-photo-placeholder");
+      if (profileImage && profilePlaceholder) {
+        profileImage.addEventListener("load", () => {
+          profileImage.hidden = false;
+          profilePlaceholder.hidden = true;
+        });
+        profileImage.addEventListener("error", () => {
+          profileImage.hidden = true;
+          profilePlaceholder.hidden = false;
+        });
+      }
+
+      // Rotate the headline through the name and professional roles.
+      const typedText = document.getElementById("typewriter-text");
+      if (typedText) {
+        const words = ["Fritz Ian", " an Industrial Engineer", " a Data Analyst"];
+        if (reduceMotion.matches) {
+          typedText.textContent = words[0];
+        } else {
+          let wordIndex = 0;
+          let deleting = false;
+          const typeNext = () => {
+            const currentWord = words[wordIndex];
+            const nextLength = typedText.textContent.length + (deleting ? -1 : 1);
+            typedText.textContent = currentWord.slice(0, Math.max(0, nextLength));
+
+            if (!deleting && typedText.textContent === currentWord) {
+              deleting = true;
+              window.setTimeout(typeNext, 1500);
+              return;
+            }
+
+            if (deleting && typedText.textContent === "") {
+              deleting = false;
+              wordIndex = (wordIndex + 1) % words.length;
+            }
+            window.setTimeout(typeNext, deleting ? 55 : 95);
+          };
+          window.setTimeout(typeNext, 300);
+        }
+      }
+
+      const safeText = (value) => String(value ?? "");
+
+      const make = (tag, className, text) => {
+
+        const element = document.createElement(tag);
+
+        if (className) element.className = className;
+
+        if (text !== undefined) element.textContent = safeText(text);
+
+        return element;
+
+      };
+
+      const externalLink = (url) => {
+
+        const link = document.createElement("a");
+
+        link.href = url;
+
+        link.target = "_blank";
+
+        link.rel = "noopener noreferrer";
+
+        return link;
+
+      };
+
+      const openIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>';
+
+
+
+      // Apply editable text. heroTitle intentionally supports a single inline <span> for accent emphasis.
+
+      document.querySelectorAll("[data-content]").forEach((element) => {
+
+        const key = element.dataset.content;
+
+        if (!(key in content)) return;
+
+        if (key === "heroTitle") {
+
+          const match = safeText(content[key]).match(/^(.*?)<span>(.*?)<\/span>(.*)$/);
+
+          if (match) {
+
+            element.textContent = match[1];
+
+            const accent = make("span", "", match[2]);
+
+            element.append(accent, document.createTextNode(match[3]));
+
+          } else element.textContent = safeText(content[key]);
+
+        } else element.textContent = safeText(content[key]);
+
+      });
+
+
+
+      // Keep all social and contact destinations in one editable place.
+
+      document.querySelectorAll("[data-link], [data-social]").forEach((link) => {
+
+        const key = link.dataset.link || link.dataset.social;
+
+        if (content.links[key]) link.href = content.links[key];
+
+      });
+
+
+
+      const focusTags = document.getElementById("focus-tags");
+
+      content.focusTags.forEach((label) => focusTags.append(make("span", "mini-tag", label)));
+
+
+
+      const aboutParagraphs = document.getElementById("about-paragraphs");
+
+      content.aboutParagraphs.forEach((paragraph) => aboutParagraphs.append(make("p", "", paragraph)));
+
+
+
+      const skillGroups = document.getElementById("skill-groups");
+
+      content.skills.forEach((group) => {
+
+        const wrapper = make("section", "skill-group");
+
+        wrapper.append(make("h4", "", group.title));
+
+        const tags = make("ul", "tags");
+
+        group.items.forEach((item) => tags.append(make("li", "", item)));
+
+        wrapper.append(tags);
+
+        skillGroups.append(wrapper);
+
+      });
+
+
+
+      const jumpNav = document.getElementById("project-jumps");
+
+      const categoriesRoot = document.getElementById("project-categories");
+
+      const visibleCategories = content.categories.filter((category) => Array.isArray(category.projects) && category.projects.length > 0);
+
+
+
+      function createProjectCard(project) {
+
+        const article = make("article", "project-card");
+
+        const imageLink = externalLink(project.url);
+
+        imageLink.className = "project-image";
+
+        imageLink.setAttribute("aria-label", "Open project: " + project.title);
+
+        const image = document.createElement("img");
+
+        image.src = project.image;
+
+        image.alt = project.imageAlt || ("Project preview: " + project.title);
+
+        image.loading = "lazy";
+
+        image.decoding = "async";
+
+        imageLink.append(image);
+
+
+
+        const body = make("div", "project-content");
+
+        const titleLink = externalLink(project.url);
+
+titleLink.className = "project-title";
+
+titleLink.textContent = project.title;
+
+titleLink.setAttribute("aria-label", "View project: " + project.title);
+
+
+
+
+
+const titleHeading = make("h4", "");
+
+titleHeading.append(titleLink);
+
+body.append(titleHeading);
+
+        body.append(make("p", "", project.description));
+
+        if (project.metricValue && project.metricLabel) {
+
+          const metric = make("p", "project-metric");
+
+          metric.append(make("strong", "", project.metricValue), document.createTextNode(project.metricLabel));
+
+          body.append(metric);
+
+        }
+
+        const tags = make("ul", "tags");
+
+        (project.tags || []).forEach((tag) => tags.append(make("li", "", tag)));
+
+        body.append(tags);
+
+        const action = externalLink(project.url);
+
+        action.className = "project-link";
+
+        action.append(document.createTextNode("View project"));
+
+        action.insertAdjacentHTML("beforeend", openIcon);
+
+        body.append(action);
+
+        article.append(imageLink, body);
+
+        return article;
+
+      }
+
+
+
+      visibleCategories.forEach((category) => {
+
+        const jump = make("a", "", category.title);
+
+        jump.href = "#" + category.id;
+
+        jumpNav.append(jump);
+
+
+
+        const section = make("section", "project-category");
+
+        section.id = category.id;
+
+        section.setAttribute("aria-labelledby", category.id + "-title");
+
+        const head = make("div", "category-head");
+
+        const copy = make("div", "category-copy");
+
+        const heading = make("h3", "", category.title);
+
+        heading.id = category.id + "-title";
+
+        copy.append(heading, make("p", "", category.description));
+
+        const controls = make("div", "carousel-controls");
+
+        const count = make("span", "carousel-count", "");
+
+        count.setAttribute("aria-live", "polite");
+
+        const previous = make("button", "carousel-btn", "");
+
+        previous.type = "button";
+
+        previous.setAttribute("aria-label", "Previous " + category.title + " projects");
+
+        previous.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>';
+
+        const next = make("button", "carousel-btn", "");
+
+        next.type = "button";
+
+        next.setAttribute("aria-label", "Next " + category.title + " projects");
+
+        next.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
+
+        controls.append(count, previous, next);
+
+        head.append(copy, controls);
+
+
+
+        const track = make("div", "carousel-track");
+
+        track.tabIndex = 0;
+
+        track.setAttribute("role", "region");
+
+        track.setAttribute("aria-roledescription", "carousel");
+
+        track.setAttribute("aria-label", category.title + " projects");
+
+        category.projects.forEach((project) => track.append(createProjectCard(project)));
+
+        section.append(head, track);
+
+        categoriesRoot.append(section);
+
+
+
+        function cardStep() {
+
+          const card = track.querySelector(".project-card");
+
+          if (!card) return track.clientWidth;
+
+          const style = window.getComputedStyle(track);
+
+          const gap = parseFloat(style.columnGap || style.gap) || 0;
+
+          return card.getBoundingClientRect().width + gap;
+
+        }
+
+        function updateControls() {
+
+          const max = Math.max(0, track.scrollWidth - track.clientWidth);
+
+          const position = track.scrollLeft;
+
+          const step = cardStep();
+
+          const index = Math.min(category.projects.length, Math.floor((position + 3) / step) + 1);
+
+          previous.disabled = position <= 2;
+
+          next.disabled = position >= max - 2;
+
+          controls.hidden = max <= 2;
+
+          count.textContent = category.projects.length === 1 ? "1 project" : index + " of " + category.projects.length;
+
+        }
+
+        let animationFrame = null;
+
+        function stopTrackAnimation() {
+
+          if (animationFrame !== null) window.cancelAnimationFrame(animationFrame);
+
+          animationFrame = null;
+
+        }
+
+        function animateTrack(target) {
+
+          stopTrackAnimation();
+
+          if (reduceMotion.matches) { track.scrollLeft = target; return; }
+
+          const start = track.scrollLeft;
+
+          const distance = target - start;
+
+          const duration = 520;
+
+          let startTime = null;
+
+          function frame(now) {
+
+            if (startTime === null) startTime = now;
+
+            const progress = Math.min(1, (now - startTime) / duration);
+
+            const eased = progress < .5 ? 4 * progress * progress * progress : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+            track.scrollLeft = start + distance * eased;
+
+            if (progress < 1) animationFrame = window.requestAnimationFrame(frame);
+
+            else animationFrame = null;
+
+          }
+
+          animationFrame = window.requestAnimationFrame(frame);
+
+        }
+
+        // User wheel, touch, or pointer movement always takes control immediately.
+
+        ["wheel", "touchstart", "pointerdown"].forEach((eventName) => {
+
+          track.addEventListener(eventName, stopTrackAnimation, { passive: true });
+
+        });
+
+        previous.addEventListener("click", () => animateTrack(Math.max(0, track.scrollLeft - cardStep())));
+
+        next.addEventListener("click", () => animateTrack(Math.min(track.scrollWidth - track.clientWidth, track.scrollLeft + cardStep())));
+
+        let scheduled = false;
+
+        track.addEventListener("scroll", () => {
+
+          if (scheduled) return;
+
+          scheduled = true;
+
+          window.requestAnimationFrame(() => { updateControls(); scheduled = false; });
+
+        }, { passive: true });
+
+        track.addEventListener("keydown", (event) => {
+
+          if (event.key === "ArrowRight") { event.preventDefault(); animateTrack(Math.min(track.scrollWidth - track.clientWidth, track.scrollLeft + cardStep())); }
+
+          if (event.key === "ArrowLeft") { event.preventDefault(); animateTrack(Math.max(0, track.scrollLeft - cardStep())); }
+
+        });
+
+        window.addEventListener("resize", updateControls, { passive: true });
+
+        updateControls();
+
+      });
+
+
+
+      // Mobile navigation: close after choosing a section or pressing Escape.
+
+      const menuToggle = document.querySelector(".menu-toggle");
+
+      const navigation = document.getElementById("primary-navigation");
+
+      function closeMenu() {
+
+        navigation.classList.remove("is-open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+      }
+
+      menuToggle.addEventListener("click", () => {
+
+        const open = menuToggle.getAttribute("aria-expanded") !== "true";
+
+        menuToggle.setAttribute("aria-expanded", String(open));
+
+        navigation.classList.toggle("is-open", open);
+
+      });
+
+      navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+
+      document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
+
+
+
+      // Mark the current main section in the navigation without changing native scroll behavior.
+
+      const navLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
+
+      const observedSections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+
+      if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver((entries) => {
+
+          entries.forEach((entry) => {
+
+            if (!entry.isIntersecting) return;
+
+            navLinks.forEach((link) => {
+
+              if (link.getAttribute("href") === "#" + entry.target.id) link.setAttribute("aria-current", "location");
+
+              else link.removeAttribute("aria-current");
+
+            });
+
+          });
+
+        }, { rootMargin: "-30% 0px -60% 0px", threshold: 0 });
+
+        observedSections.forEach((section) => observer.observe(section));
+
+      }
+
+    })();
+
+  </script>
+
+</body>
+
+</html>
